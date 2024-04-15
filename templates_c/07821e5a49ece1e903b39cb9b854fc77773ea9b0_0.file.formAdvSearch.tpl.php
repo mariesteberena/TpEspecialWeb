@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-04-12 17:26:12
+/* Smarty version 3.1.39, created on 2024-04-15 21:36:57
   from 'D:\xampp\htdocs\Proyectos\Web II\TPE2024\templates\form\formAdvSearch.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_66195294ae3ef4_73307845',
+  'unifunc' => 'content_661d81d9459b54_22231912',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '07821e5a49ece1e903b39cb9b854fc77773ea9b0' => 
     array (
       0 => 'D:\\xampp\\htdocs\\Proyectos\\Web II\\TPE2024\\templates\\form\\formAdvSearch.tpl',
-      1 => 1711922392,
+      1 => 1713209814,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66195294ae3ef4_73307845 (Smarty_Internal_Template $_smarty_tpl) {
+function content_661d81d9459b54_22231912 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container col-auto">
     <form action="searchProducts" method="get" class="form-group">
         <div class="container m-3 col-sm-auto w-100">
@@ -45,10 +45,10 @@ function content_66195294ae3ef4_73307845 (Smarty_Internal_Template $_smarty_tpl)
             <div class="d-flex justify-content-start form-row">
 
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-outline-dark px-4 m-2">Buscar</button>
+                    <button type="submit" class="btn btn-dark px-4 m-2">Buscar</button>
                 </div>
                 <div class="col-auto">
-                    <a type=button href="home" class="btn btn-outline-dark px-4 m-2">Volver</a>
+                    <a type=button href="home" class="btn btn-dark px-4 m-2">Volver</a>
                 </div>
             </div>
 

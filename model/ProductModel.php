@@ -15,11 +15,11 @@ class ProductModel{
         $productos = $query->fetchAll(PDO::FETCH_OBJ);
         return $productos;
     }
-    function insert($category,$product,$price, $detail, $pathImg = null){
+    function insert($product,$price, $detail,$category, $pathImg = null){
         
-        $query = $this->db->prepare('INSERT INTO productos(id_categoria,nombre_producto,precio, detalle,imagen) 
+        $query = $this->db->prepare('INSERT INTO productos(nombre_producto,precio, detalle,id_categoria,imagen) 
         VALUES (?,?,?,?,?)');
-        $query->execute([$category,$product,$price, $detail,$pathImg]);        
+        $query->execute([$product,$price, $detail,$category,$pathImg]);        
     }
     
 
@@ -28,15 +28,15 @@ class ProductModel{
         return $query->execute([$id]);
     }
 
-    function modify($category,$product,$price, $detail, $id, $pathImg=null) {
+    function modify($category,$product, $detail,$price, $pathImg=null,$id) {
         $query =  $this->db->prepare('UPDATE `productos` 
         SET `id_categoria` = ?,
         `nombre_producto` = ?, 
         `detalle` = ?,
         `precio` = ?,
         `imagen` = ?
-        WHERE `productos`.`id_producto` = ?;'); 
-        return $query->execute([$category,$product,$detail, $price, $pathImg,$id]);
+        WHERE `productos`.`id_producto` = ?'); 
+        return $query->execute([$category,$product, $detail,$price, $pathImg,$id]);
     }
 
     function uploadImage($image){
@@ -86,7 +86,7 @@ class ProductModel{
 
     //Realiza búsqueda de productos en base a nombre,categoria, o precios (max o min)
     function advancedSearch($lowLim=NULL, $uppLim=null, $prodName='%',$categName='%'){
-        $query = $this->db->prepare('SELECT p.nombre_producto, p.precio_producto, p.id_producto,
+        $query = $this->db->prepare('SELECT p.nombre_producto, p.precio, p.id_producto,
         p.id_categoria, c.nombre_categoria, c.id_categoria 
        FROM productos AS p 
        INNER JOIN categorias AS c 

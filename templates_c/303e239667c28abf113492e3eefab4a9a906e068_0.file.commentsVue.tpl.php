@@ -1,4 +1,28 @@
-{literal}
+<?php
+/* Smarty version 3.1.39, created on 2024-04-15 23:08:48
+  from 'D:\xampp\htdocs\Proyectos\Web II\TPE2024\templates\vue\commentsVue.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_661d97605413b3_12802034',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '303e239667c28abf113492e3eefab4a9a906e068' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\Proyectos\\Web II\\TPE2024\\templates\\vue\\commentsVue.tpl',
+      1 => 1713215302,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:form/formInsertComment.tpl' => 1,
+  ),
+),false)) {
+function content_661d97605413b3_12802034 (Smarty_Internal_Template $_smarty_tpl) {
+?>
     <div id="comments">
 
         <div class="container   p-4 mb-4 bg-light border border-dark rounded list-group-item">
@@ -76,14 +100,14 @@
                                 <p>{{comment.fecha}}</p>
                             </div>
                             <div class="row">
-                            {/literal}
-                            {if (isset($smarty.session.USER_ROL) && $smarty.session.USER_ROL == "1")}
-                                {literal}
+                            
+                            <?php if (((isset($_SESSION['USER_ROL'])) && $_SESSION['USER_ROL'] == "1")) {?>
+                                
                                     <div class="col-20 justify-content-end">
                                         <button type="button" class="btn btn-sm btn-danger m-2 w-25" name="delete"
                                             v-on:click="delComment(comment.id)" v-bind:comment-id="comment.id">Borrar</button>
-                                    {/literal}
-                                {/if}
+                                    
+                                <?php }?>
                             </div>
                         </div>
                     </div>
@@ -92,19 +116,21 @@
 
         </div>
 
-        {literal}
+        
             <div v-show="status == true" class="alert alert-success m-1">
                 {{message}}
             </div>
             <div v-show="status == false" class="alert alert-danger m-1">
                 {{message}}
             </div>
-        {/literal}
+        
 
 
     </div>
 
 
-    {include file = "form/formInsertComment.tpl"}
+    <?php $_smarty_tpl->_subTemplateRender("file:form/formInsertComment.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
-</div>
+</div><?php }
+}

@@ -1,8 +1,8 @@
 <?php
 // -------- HELPER
-require_once 'helpers/auth.helper.php';
+require_once 'helpers/AuthHelper.php';
 // -------- PRODUCTOS
-require_once 'view/CategoryView.php';
+//require_once 'view/CategoryView.php';
 require_once 'model/CategoryModel.php';
 class CategoryModel{
     private $db;

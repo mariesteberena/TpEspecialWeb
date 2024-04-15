@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-04-12 17:26:12
+/* Smarty version 3.1.39, created on 2024-04-15 21:50:09
   from 'D:\xampp\htdocs\Proyectos\Web II\TPE2024\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_66195294a7f177_71684504',
+  'unifunc' => 'content_661d84f1915be2_47185716',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a9de1514f8e651d47c257864e597a2032da62c7f' => 
     array (
       0 => 'D:\\xampp\\htdocs\\Proyectos\\Web II\\TPE2024\\templates\\header.tpl',
-      1 => 1711922392,
+      1 => 1713210607,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66195294a7f177_71684504 (Smarty_Internal_Template $_smarty_tpl) {
+function content_661d84f1915be2_47185716 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -31,8 +31,8 @@ function content_66195294a7f177_71684504 (Smarty_Internal_Template $_smarty_tpl)
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text-css" href="css/style.css">
 
     <!-- development version, includes helpful console warnings -->
@@ -44,7 +44,7 @@ function content_66195294a7f177_71684504 (Smarty_Internal_Template $_smarty_tpl)
 
 </head>
 
-<body>
+<body class="bg-light-bg-subtle">
     <header>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -76,11 +76,12 @@ $_smarty_tpl->tpl_vars['categoria']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['categoria']->value) {
 $_smarty_tpl->tpl_vars['categoria']->do_else = false;
 ?>
-                                <li>
-                                    <a href="nombre_categoria/<?php echo $_smarty_tpl->tpl_vars['categoria']->value->nombre;?>
-" class="dropdown-item"><?php echo $_smarty_tpl->tpl_vars['categoria']->value->nombre;?>
+                                    <li>
+                                        <a href="nombre_categoria/<?php echo $_smarty_tpl->tpl_vars['categoria']->value->nombre;?>
+"
+                                            class="dropdown-item"><?php echo $_smarty_tpl->tpl_vars['categoria']->value->nombre;?>
 </a>
-                                </li>
+                                    </li>
                                 <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
@@ -88,28 +89,31 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
                         </li>
                         <?php if (($_SESSION['USER_ROL'] == 1)) {?>
-                        <li class="nav-item ">
-                            <a href="admin" class="nav-link me-2">Administrar Productos</a>
-                        </li><li class="nav-item ">
-                            <a href="usuarios" class="nav-link me-2">Administrar Usuarios</a>
-                        </li>
+                            <li class="nav-item ">
+                                <a href="admin" class="nav-link me-2">Administrar Categorias y Productos</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="usuarios" class="nav-link me-2">Administrar Usuarios</a>
+                            </li>
                         <?php }?>
+
                         <?php if ((isset($_SESSION['USER_ID']))) {?>
-                        <li class="nav-item ">
-                            <a href="logout" class="nav-link">Cerrar sesión(<?php echo $_SESSION['USER_EMAIL'];?>
+                            <li class="nav-item ">
+                                <a href="logout" class="nav-link">Cerrar sesión(<?php echo $_SESSION['USER_EMAIL'];?>
 )</a>
-                        </li>
+                            </li>
                         <?php } else { ?>
-                        <li class="nav-item ">
-                            <a href="registro" class="nav-link">Registro</a>
-                        </li>
-                        <li class="nav-item "><a href="login" class="nav-link">Ingresar</a>
-                        </li>
+                            <li class="nav-item ">
+                                <a href="registro" class="nav-link">Registro</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="login" class="nav-link">Ingresar</a>
+                            </li>
                         <?php }?>
                     </ul>
                 </div>
             </div>
         </nav>
 
-    </header><?php }
+</header><?php }
 }

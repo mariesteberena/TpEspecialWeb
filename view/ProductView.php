@@ -36,8 +36,7 @@ class ProductView{
         $this->smarty->display('templates/section/sectionProductsAdmin.tpl');
     }
 
-    function renderModifyProduct($id,$categorias){
-  
+    function renderModifyProduct($id,$categorias){  
         $this->smarty->assign('categorias', $categorias);
         $this->smarty->assign('id', $id);
         $this->smarty->display('templates/form/formModifyProd.tpl');

@@ -20,9 +20,16 @@
 </div>
 
 {if $error}
-<div class="alert alert-danger mt-3">
-    {$error}
+    <div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="alert alert-danger m-4">
+                {$error}
+            </div>
+        </div>
+    </div>
 </div>
+
 {/if}
 
 {include file="footer.tpl"}

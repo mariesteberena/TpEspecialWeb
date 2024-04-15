@@ -3,6 +3,7 @@ require_once 'api/apiView.php';
 
 class AuthHelper {
     private $apiView;
+    
     public function __construct(){
         //abre la sessión siempre para usar el helper
         if (session_status() != PHP_SESSION_ACTIVE) {
@@ -12,7 +13,7 @@ class AuthHelper {
     }
 
     function login($user){
-        $_SESSION['USER_ID'] = $user->id;
+        $_SESSION['USER_ID'] = $user->id_usuario;
         $_SESSION['USER_EMAIL'] = $user->email;
         $_SESSION['USER_ROL'] = $user->id_rol;
         $_SESSION['LAST_ACTIVITY'] = time();

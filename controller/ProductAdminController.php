@@ -3,8 +3,6 @@
 require_once('view/ErrorView.php');
 class ProductAdminController { 
     
-    //Gestiona ABM de productos y sus categorías(sección administrador de productos)
-
     private $categoryModel;
     private $productModel;
     private $productView;
@@ -24,10 +22,8 @@ class ProductAdminController {
     {
         $access_level = "1";
         $this->authHelper->getPermission($access_level);
-
         $product = $this->productModel->getAll();
         $categories = $this->categoryModel->getAll();
-
         if ($product) {
             $this->productView->renderProdAdmin($categories, $product);
         } else {
@@ -74,7 +70,6 @@ class ProductAdminController {
     {
         $access_level = "1";
         $this->authHelper->getPermission($access_level);
-
         $product = $this->productModel->getProduct($id);
         $this->deleteImage($id, $product);
         if ($product) {
@@ -90,32 +85,31 @@ class ProductAdminController {
     }
 
     function modifyProd()
-    {
-        $access_level = "1";
+    {   $access_level = "1";
         $this->authHelper->getPermission($access_level);
 
         if (
             !empty($_REQUEST['producto']) && !empty($_REQUEST['detalle']) &&
             !empty($_REQUEST['categoria']) && !empty($_REQUEST['precio']) && !empty($_REQUEST['id'])
-            && isset($_REQUEST['producto']) && isset($_REQUEST['detalle']) &&
+            && isset( $_REQUEST['producto']) && isset($_REQUEST['detalle']) &&
             isset($_REQUEST['categoria']) && isset($_REQUEST['precio']) && isset($_REQUEST['id'])
         ) {
-
+            $id = $_REQUEST['id'];
+            $category = $_REQUEST['categoria'];
             $product = $_REQUEST['producto'];
             $price = $_REQUEST['precio'];
             $detail = $_REQUEST['detalle'];
-            $category = $_REQUEST['categoria'];
-            $id = $_REQUEST['id'];
-
             $pathImg = $this->uploadImage();
+
             if ($pathImg) {
-                $modify = $this->productModel->modify($product, $price, $detail, $id, $category, $pathImg);
+                $modify = $this->productModel->modify($category, $product, $detail, $price, $pathImg, $id);
             } else {
-                $modify = $this->productModel->modify($product, $price, $detail, $id, $category);
+                $modify = $this->productModel->modify($category, $product, $detail, $price, null, $id);
             }
 
             if ($modify) {
                 header("Location: " . ADMIN);
+                
             } else {
                 $this->errorView->render("No se pudo modificar");
             }
@@ -147,7 +141,6 @@ class ProductAdminController {
         if (!$product) { //Si no recibe producto lo pide a la DB 
             $product = $this->productModel->getProduct($id_product);
         }
-
         if ($product->imagen) { //Si tiene imagen asociada llama a eliminar del servidor con el path asociado
             $path = $product->imagen;
             $unlinked = $this->productModel->deleteImage($path);
@@ -174,62 +167,4 @@ class ProductAdminController {
         $this->productView->renderModifyProduct($id, $categories);
     }
 
-    //FUNCIONES DE ABM DE CATEGORIAS (y renderización necesaria)
-
-
-    function insertCateg()
-    {
-        $access_level = "1";
-        $this->authHelper->getPermission($access_level);
-
-        if (!empty($_GET['nombre_categoria']) && isset($_GET['nombre_categoria'])) {
-
-            $category = $_GET['nombre_categoria'];
-            $this->categoryModel->insert($category);
-
-            header("Location: " . ADMIN);
-        } else {
-            $this->errorView->render("Ingreso inválidos");
-        }
-    }
-
-    function deleteCateg($id)
-    {
-        $access_level = "1";
-        $this->authHelper->getPermission($access_level);
-        $category = $this->categoryModel->getCategory($id);
-        if ($category) {
-            $this->categoryModel->delete($id);
-            header("Location: " . ADMIN);
-        } else {
-            $this->errorView->render("La categoría no existe");
-        }
-    }
-
-    function modifyCateg()
-    {
-        $access_level = "1";
-        $this->authHelper->getPermission($access_level);
-        if (
-            !empty($_REQUEST['categoria']) && !empty($_REQUEST['id'])
-            && isset($_REQUEST['categoria']) && isset($_REQUEST['id'])
-        ) {
-
-            $newCat = $_REQUEST['categoria'];
-            $id = $_REQUEST['id'];
-
-            $this->categoryModel->modify($newCat, $id);
-            header("Location: " . ADMIN);
-        } else {
-            $this->errorView->render("Ingreso inválido");
-        }
-    }
-
-    function renderModifyCateg($id)
-    {
-        $access_level = "1";
-        $this->authHelper->getPermission($access_level);
-        $categories = $this->categoryModel->getAll();
-        $this->productView->renderCategoriesForm($id, $categories);
-    }
-}
+} 

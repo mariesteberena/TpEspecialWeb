@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text-css" href="css/style.css">
 
     <!-- development version, includes helpful console warnings -->
@@ -18,7 +18,7 @@
 
 </head>
 
-<body>
+<body class="bg-light-bg-subtle">
     <header>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -45,34 +45,38 @@
 
                             <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
                                 {foreach from=$categorias item=categoria}
-                                <li>
-                                    <a href="nombre_categoria/{$categoria->nombre}" class="dropdown-item">{$categoria->nombre}</a>
-                                </li>
+                                    <li>
+                                        <a href="nombre_categoria/{$categoria->nombre}"
+                                            class="dropdown-item">{$categoria->nombre}</a>
+                                    </li>
                                 {/foreach}
                             </ul>
 
                         </li>
                         {if ($smarty.session.USER_ROL eq 1)}
-                        <li class="nav-item ">
-                            <a href="admin" class="nav-link me-2">Administrar Productos</a>
-                        </li><li class="nav-item ">
-                            <a href="usuarios" class="nav-link me-2">Administrar Usuarios</a>
-                        </li>
+                            <li class="nav-item ">
+                                <a href="admin" class="nav-link me-2">Administrar Categorias y Productos</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="usuarios" class="nav-link me-2">Administrar Usuarios</a>
+                            </li>
                         {/if}
+
                         {if isset($smarty.session.USER_ID)}
-                        <li class="nav-item ">
-                            <a href="logout" class="nav-link">Cerrar sesión({$smarty.session.USER_EMAIL})</a>
-                        </li>
+                            <li class="nav-item ">
+                                <a href="logout" class="nav-link">Cerrar sesión({$smarty.session.USER_EMAIL})</a>
+                            </li>
                         {else}
-                        <li class="nav-item ">
-                            <a href="registro" class="nav-link">Registro</a>
-                        </li>
-                        <li class="nav-item "><a href="login" class="nav-link">Ingresar</a>
-                        </li>
+                            <li class="nav-item ">
+                                <a href="registro" class="nav-link">Registro</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a href="login" class="nav-link">Ingresar</a>
+                            </li>
                         {/if}
                     </ul>
                 </div>
             </div>
         </nav>
 
-    </header>
+</header>

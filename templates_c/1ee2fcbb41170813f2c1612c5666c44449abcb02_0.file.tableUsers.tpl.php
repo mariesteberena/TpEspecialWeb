@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-04-12 19:18:32
+/* Smarty version 3.1.39, created on 2024-04-15 21:38:48
   from 'D:\xampp\htdocs\Proyectos\Web II\TPE2024\templates\table\tableUsers.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_66196ce88c2b73_71979876',
+  'unifunc' => 'content_661d8248b91659_29542814',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1ee2fcbb41170813f2c1612c5666c44449abcb02' => 
     array (
       0 => 'D:\\xampp\\htdocs\\Proyectos\\Web II\\TPE2024\\templates\\table\\tableUsers.tpl',
-      1 => 1711922392,
+      1 => 1713209926,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,9 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_66196ce88c2b73_71979876 (Smarty_Internal_Template $_smarty_tpl) {
+function content_661d8248b91659_29542814 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
-    <table class="table table-hover table-responsive">
+    <table class="table table-hover table-responsive table-light">
         
         <thead>
             <tr>
@@ -30,11 +30,11 @@ function content_66196ce88c2b73_71979876 (Smarty_Internal_Template $_smarty_tpl)
                 <th>Email</th>
                 <th>Rol</th>
                 <th></th>
-                <th>Modificar</th>
-                <th></th>
+                <th>Modificar</th> 
+                <th></th>               
             </tr>
         </thead>
-        <tbody class="table table-responsive">
+        <tbody class="table table-responsive table-light">
             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['users']->value, 'user');
 $_smarty_tpl->tpl_vars['user']->do_else = true;
@@ -50,12 +50,10 @@ $_smarty_tpl->tpl_vars['user']->do_else = false;
 </td>
                 <form action="cambiarRol" method="post">
                     <td>
-                        <input hidden type="hidden" name="user-id" value="<?php echo $_smarty_tpl->tpl_vars['user']->value->id;?>
+                        <input hidden type="hidden" name="user-id" value="<?php echo $_smarty_tpl->tpl_vars['user']->value->id_usuario;?>
 "></input>
                         <select name="rol-id" id="" class="form-select">
-                            <option selected=<?php echo $_smarty_tpl->tpl_vars['user']->value->id_rol;?>
-><?php echo $_smarty_tpl->tpl_vars['user']->value->rol;?>
-</option>
+                        <option disabled selected>Nuevo Rol</option>
                             <?php if ($_smarty_tpl->tpl_vars['user']->value->id_rol == 1) {?>
                             <option value="2">User</option>
                             <?php } else { ?>
@@ -64,11 +62,11 @@ $_smarty_tpl->tpl_vars['user']->do_else = false;
                         </select>
                     </td>
                     <td>
-                        <button href="cambiarRol" class="btn btn-outline-danger">Guardar cambio</button>
+                        <button href="cambiarRol" class="btn btn-outline-warning">Guardar cambio</button>
                     </td>
                 </form>
                 <td>
-                    <a href="borrarUsuario/<?php echo $_smarty_tpl->tpl_vars['user']->value->id;?>
+                    <a href="borrarUsuario/<?php echo $_smarty_tpl->tpl_vars['user']->value->id_usuario;?>
 " class="btn btn-outline-danger">Eliminar</a>
                 </td>
 

@@ -22,10 +22,10 @@
             <div class="d-flex justify-content-start form-row">
 
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-outline-dark px-4 m-2">Buscar</button>
+                    <button type="submit" class="btn btn-dark px-4 m-2">Buscar</button>
                 </div>
                 <div class="col-auto">
-                    <a type=button href="home" class="btn btn-outline-dark px-4 m-2">Volver</a>
+                    <a type=button href="home" class="btn btn-dark px-4 m-2">Volver</a>
                 </div>
             </div>
 

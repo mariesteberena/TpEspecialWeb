@@ -2,7 +2,7 @@
 
 require_once('model/UserModel.php');
 require_once('view/AccessView.php');
-include_once('helpers/auth.helper.php');
+include_once('helpers/AuthHelper.php');
 require_once('model/CategoryModel.php');
 require_once('view/ErrorView.php');
 
@@ -13,6 +13,8 @@ class UserAdminController
     private $accessView;
     private $errorView;
     private $categoryModel;
+    private $authHelper;
+    
     public function __construct()    {
         $this->authHelper = new AuthHelper();
         $this->errorView = new ErrorView();
@@ -65,9 +67,7 @@ class UserAdminController
             $user = $_POST['usuario'];
             $password = $_POST['password'];
             $userData = $this->userModel->getUserData($user);
-
             if (!empty($userData) && password_verify($password, $userData->password)) {
-
                 $this->authHelper->login($userData);
                 header("Location: " . BASE_URL);
             } else {
@@ -89,7 +89,7 @@ class UserAdminController
             $users = $this->userModel->getAll();
         }
         foreach ($users as $user) {
-            if ($user->id == $user_id) {
+            if ($user->id_usuario == $user_id) {
                 return $user_id;
             }
         }
@@ -129,15 +129,11 @@ class UserAdminController
     }
 
     function deleteUser($user_id)
-    {
-        $access_level = "1";
+    {   $access_level = "1";
         $this->authHelper->getPermission($access_level);
-
         //Chequeo de borrado para no quedar sin users admins
-
         if ($user_id != $_SESSION['USER_ID']) { //Check que no se auto-elimine
             $user_id = $this->checkUserID($user_id); //Chequeo que el usuario esté en la db
-
             if ($user_id) {
                 $this->userModel->delete($user_id);
                 header("Location: " . USERS);
@@ -153,18 +149,14 @@ class UserAdminController
     {
         $access_level = "1";
         $this->authHelper->getPermission($access_level);
-
         if (
             !empty($_REQUEST['user-id']) && !empty($_REQUEST['rol-id'])
             && isset($_REQUEST['user-id']) && isset($_REQUEST['rol-id'])
         ) {
             $user_id = $_REQUEST['user-id'];
             $role_id = $_REQUEST['rol-id'];
-
-
             if ($user_id != $_SESSION['USER_ID']) { //Chequea que no se auto-modifique
                 $user_id = $this->checkUserID($user_id); //Chequeo que el usuario esté en la db
-
                 if ($user_id) {
                     $this->userModel->setRole($user_id, $role_id);
                     $this->renderUsersAdmin();

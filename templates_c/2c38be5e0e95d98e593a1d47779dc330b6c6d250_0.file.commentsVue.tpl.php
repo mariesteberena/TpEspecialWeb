@@ -1,7 +1,31 @@
-{literal}
+<?php
+/* Smarty version 3.1.39, created on 2024-04-13 17:20:12
+  from 'D:\xampp\htdocs\Proyectos\Web II\TPE2024\templates\Vue\commentsVue.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_661aa2ac2bd600_81765553',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '2c38be5e0e95d98e593a1d47779dc330b6c6d250' => 
+    array (
+      0 => 'D:\\xampp\\htdocs\\Proyectos\\Web II\\TPE2024\\templates\\Vue\\commentsVue.tpl',
+      1 => 1711922392,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:form/formInsertComment.tpl' => 1,
+  ),
+),false)) {
+function content_661aa2ac2bd600_81765553 (Smarty_Internal_Template $_smarty_tpl) {
+?>
     <div id="comments">
 
-        <div class="container   p-4 mb-4 bg-light border border-dark rounded list-group-item">
+        <div class="container   p-4 mb-4 bg-light border border-info rounded list-group-item">
             <div v-if="empty">
                 <h3>{{empty}}</h3>
 
@@ -67,23 +91,22 @@
                     <div class="list-group-item bg-light" v-for="comment in comments" :key="comment.id">
                         <div class="m-2 p-2">
                             <div
-                                class="row row-no-gutters justify-content-between align-items-center bg-white border border-dark rounded bottom p-2">
+                                class="row row-no-gutters justify-content-between align-items-center bg-white border border-info rounded-bottom p-2">
                                 <h3 class="col-auto  text-capitalize px-2">{{comment.nombre}}</h3>
                                 <div class="col-sm-auto">
-                                    <span v-for="n in parseInt(comment.puntuacion)">⭐</span>
+                                    <span v-for="n in parseInt(comment.puntuacion)" >⭐</span>
                                 </div>
                                 <div class="h5 border-right p-3 text-center">{{comment.comentario}}</div>
-                                <p>{{comment.fecha}}</p>
                             </div>
                             <div class="row">
-                            {/literal}
-                            {if (isset($smarty.session.USER_ROL) && $smarty.session.USER_ROL == "1")}
-                                {literal}
+                            
+                            <?php if (((isset($_SESSION['USER_ROL'])) && $_SESSION['USER_ROL'] == "1")) {?>
+                                
                                     <div class="col-20 justify-content-end">
                                         <button type="button" class="btn btn-sm btn-danger m-2 w-25" name="delete"
                                             v-on:click="delComment(comment.id)" v-bind:comment-id="comment.id">Borrar</button>
-                                    {/literal}
-                                {/if}
+                                    
+                                <?php }?>
                             </div>
                         </div>
                     </div>
@@ -92,19 +115,21 @@
 
         </div>
 
-        {literal}
+        
             <div v-show="status == true" class="alert alert-success m-1">
                 {{message}}
             </div>
             <div v-show="status == false" class="alert alert-danger m-1">
                 {{message}}
             </div>
-        {/literal}
+        
 
 
     </div>
 
 
-    {include file = "form/formInsertComment.tpl"}
+    <?php $_smarty_tpl->_subTemplateRender("file:form/formInsertComment.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
-</div>
+</div><?php }
+}
