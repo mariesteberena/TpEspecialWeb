@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-04-2024 a las 23:01:58
+-- Tiempo de generación: 15-04-2024 a las 23:14:18
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -37,14 +37,11 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`) VALUES
-(1, 'Cafeteria'),
-(2, 'Pasteleria'),
-(3, 'Desayunos y Meriendas'),
+(3, 'algo'),
 (4, 'Sin Tacc'),
 (5, 'Jugos y Gaseosas'),
 (6, 'Sandwichs'),
-(7, 'Pastas'),
-(8, 'Bebidas');
+(7, 'Pastas');
 
 -- --------------------------------------------------------
 
@@ -57,8 +54,24 @@ CREATE TABLE `comentarios` (
   `id_producto` int(11) NOT NULL,
   `id_usuario` int(11) NOT NULL,
   `comentario` varchar(100) NOT NULL,
-  `puntuacion` int(1) NOT NULL
+  `puntuacion` int(1) NOT NULL,
+  `fecha` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `comentarios`
+--
+
+INSERT INTO `comentarios` (`id_comentario`, `id_producto`, `id_usuario`, `comentario`, `puntuacion`, `fecha`) VALUES
+(43, 10, 13, 'un comentario', 1, '2020-05-22'),
+(45, 10, 13, 'un comentario', 5, '2024-04-30'),
+(48, 10, 13, 'un comentario', 1, '2021-04-23'),
+(49, 10, 13, 'un comentario', 1, '2024-08-23'),
+(51, 10, 13, 'elpeepee', 5, '2024-04-15'),
+(52, 10, 13, 'elpeepee', 5, '2024-04-15'),
+(53, 10, 13, 'elpeepee', 5, '2024-04-15'),
+(54, 10, 13, 'un comentario', 1, '2024-04-15'),
+(55, 10, 13, 'asasfaf', 4, '2024-04-15');
 
 -- --------------------------------------------------------
 
@@ -80,10 +93,10 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `id_categoria`, `nombre_producto`, `detalle`, `precio`, `imagen`) VALUES
-(1, 1, 'Espresso', 'Posillo', 1000, NULL),
-(2, 2, 'Torta Especial', 'Chocolate, frutos rojos, dulce de leche y merengue', 2700, NULL),
 (3, 3, 'Desayuno Especial', 'Cafe, tostadas, queso/ mermelada/dulce de leche/manteca + Jugo de naranjas', 5000, NULL),
-(4, 4, 'Alfajores de maizena', '----', 1900, NULL);
+(4, 4, 'Alfajores de maizena', '----', 1900, NULL),
+(10, 3, 'a', 'un prod mas', 2000, NULL),
+(14, 3, 'Cofler Block Mari', 'otro prod nuevo', 12478, 'img/661c7a118ecd1.jpg');
 
 -- --------------------------------------------------------
 
@@ -124,10 +137,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `email`, `nombre`, `password`, `id_rol`) VALUES
 (4, 'mesteberena@gmail.com', 'Maria', '$2y$10$6bOGSwWbZdj6bEY2ehm06.ODGSBzFS.6shfTofPs0YgLSVfdqN6M.', 1),
-(5, 'juan@example.com', 'Juan', '$2y$10$sG8/ZHbZTFoVT7ckbKZp7OPKlfsy1GcUHsBIWXN82h5rsyvG8Rw8a', 1),
-(6, 'marlene@demo.com', 'marlene', '$2y$10$AqAIqUvwbZfgo0p.D.cr0efwx.KYIo256smLJYsWK9C/HmPEnvjqq', 2),
-(7, 'pepe@example.com', 'pepe', '$2y$10$4V/MzbDX8gtoRzSwz9X9dOEfJ49k1LvJVaNPwXnIO5FG7Dxklu8I6', 2),
-(8, 'juan@example.com', 'maria', '$2y$10$zMn1.LPWpErkrv3waH1a2ev/.63gl2LiaUWYq4rOfr5BdvJ0uQcne', 2);
+(13, 'pepe@example.com', 'pepe', '$2y$10$ZJDH8zMyMrUZLq6Fi7DFLu6NLoZEI7G7dK3YVstDHJdZYG4XSbqau', 2);
 
 --
 -- Índices para tablas volcadas
@@ -175,19 +185,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -199,7 +209,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_usuario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restricciones para tablas volcadas
