@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-04-15 21:35:37
+/* Smarty version 3.1.39, created on 2024-04-17 19:34:43
   from 'D:\xampp\htdocs\Proyectos\Web II\TPE2024\templates\table\tableCategories.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_661d8189e51999_86541347',
+  'unifunc' => 'content_66200833c05823_86383125',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_661d8189e51999_86541347 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66200833c05823_86383125 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="container mt-5">
     <h3>Agregar Categorias</h3>

@@ -45,7 +45,7 @@ class ProductModel{
         return $target;
     }
 
-    function deleteImage($pathImg){ //Elimina la imagen del servidor (../img/..) retorna el resultado (T/F)
+    function deleteImage($pathImg){ //retorna el resultado (T/F)
         $unlinked = unlink($pathImg);
         return $unlinked;
     }

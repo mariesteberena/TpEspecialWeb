@@ -64,7 +64,7 @@
                     <h3 class="h3 m-1">{{notFound}}</h3>
                 </div>
                 <div v-else>
-                    <div class="list-group-item bg-light" v-for="comment in comments" :key="comment.id">
+                    <div class="list-group-item bg-light" v-for="comment in comments" :key="comment.id_comentario">
                         <div class="m-2 p-2">
                             <div
                                 class="row row-no-gutters justify-content-between align-items-center bg-white border border-dark rounded bottom p-2">
@@ -81,7 +81,7 @@
                                 {literal}
                                     <div class="col-20 justify-content-end">
                                         <button type="button" class="btn btn-sm btn-danger m-2 w-25" name="delete"
-                                            v-on:click="delComment(comment.id)" v-bind:comment-id="comment.id">Borrar</button>
+                                            v-on:click="delComment(comment.id_comentario)" v-bind:comment-id="comment.id_comentario">Borrar</button>
                                     {/literal}
                                 {/if}
                             </div>

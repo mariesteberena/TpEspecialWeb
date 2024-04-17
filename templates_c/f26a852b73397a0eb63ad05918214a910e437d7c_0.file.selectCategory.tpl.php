@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-04-15 20:35:20
+/* Smarty version 3.1.39, created on 2024-04-17 19:34:43
   from 'D:\xampp\htdocs\Proyectos\Web II\TPE2024\templates\form\selectCategory.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_661d7368c454f5_48512150',
+  'unifunc' => 'content_66200833ba2877_96030402',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_661d7368c454f5_48512150 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66200833ba2877_96030402 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <select name="categoria" id="select" class="form-select my-1 w-100 ">
     <option disabled selected>Seleccionar categoría</option>

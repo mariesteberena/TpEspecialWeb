@@ -18,7 +18,7 @@
                         <td>{$producto->nombre_producto}</td>
                         <td>${$producto->precio}</td>
                         <td>
-                            <a href="detalle/{$producto->id_producto}" class="btn btn-outline-success">Ver detalle</a>
+                            <a href="detalle/{$producto->id_producto}" class="btn btn-outline-dark">Ver detalle</a>
                         </td>
                         <td>
                             <a href="borrar/{$producto->id_producto}" class="btn btn-outline-danger">Eliminar</a>
@@ -37,22 +37,17 @@
         <div class="container">
             <h3>Agregar un Producto</h3>
             <form class="form-group" action="agregar-producto" method="POST" enctype="multipart/form-data">
-                <tr>
-                    <td>{include file="form/selectCategory.tpl"}</td>
-                    <td><input type="text" class="form-control" required="required" placeholder="Nombre de producto"
-                            name="producto"></td>
-                    <td><input type="number" class="form-control" required="required" placeholder="Precio" name="precio">
-                    </td>
-                    <td>
-                        <input type="text" class="form-control" required="required" placeholder="Detalle" name="detalle">
-                    </td>
-                    <td>
-                        <input type="file" name="imagen" id="imageToUpload" class="form-control">
-                    </td>
-                    <td>
-                        <button type="submit" class="btn btn-success mt-3 mb-5">Agregar</button>
-                    </td>
-                </tr>
+                   {include file="form/selectCategory.tpl"}
+                    <input type="text" class="form-control mb-1" required="required" placeholder="Nombre de producto"
+                            name="producto">
+                    <input type="number" class="form-control mb-1" required="required" placeholder="Precio" name="precio">                 
+                    <input type="text" class="form-control mb-1" required="required" placeholder="Detalle" name="detalle">            
+                    <input type="file" name="imagen" id="imageToUpload" class="form-control mb-2">
+                    <button type="submit" class="btn btn-success mt-1 mb-5">Agregar</button>
             </form>
-        {/if}
+    {/if}                
 </div>
+                    
+                    
+                    
+                

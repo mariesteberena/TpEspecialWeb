@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-04-2024 a las 23:14:18
+-- Tiempo de generación: 17-04-2024 a las 20:05:30
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -37,11 +37,14 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`) VALUES
-(3, 'algo'),
-(4, 'Sin Tacc'),
-(5, 'Jugos y Gaseosas'),
-(6, 'Sandwichs'),
-(7, 'Pastas');
+(1, 'Cafetería'),
+(2, 'Pastelería'),
+(3, 'Desayunos y Meriendas'),
+(4, 'Jugos y Gaseosas'),
+(5, 'Sin Tacc'),
+(6, 'Sandwiches'),
+(7, 'Pastas'),
+(8, 'Hamburguesas');
 
 -- --------------------------------------------------------
 
@@ -63,15 +66,11 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`id_comentario`, `id_producto`, `id_usuario`, `comentario`, `puntuacion`, `fecha`) VALUES
-(43, 10, 13, 'un comentario', 1, '2020-05-22'),
-(45, 10, 13, 'un comentario', 5, '2024-04-30'),
-(48, 10, 13, 'un comentario', 1, '2021-04-23'),
-(49, 10, 13, 'un comentario', 1, '2024-08-23'),
-(51, 10, 13, 'elpeepee', 5, '2024-04-15'),
-(52, 10, 13, 'elpeepee', 5, '2024-04-15'),
-(53, 10, 13, 'elpeepee', 5, '2024-04-15'),
-(54, 10, 13, 'un comentario', 1, '2024-04-15'),
-(55, 10, 13, 'asasfaf', 4, '2024-04-15');
+(56, 3, 13, 'Muy bueno', 5, '2024-04-17'),
+(57, 3, 14, 'Excelente', 5, '2024-04-17'),
+(58, 10, 14, 'Riquísimo', 3, '2024-04-17'),
+(59, 23, 14, 'Un poco caro', 3, '2024-04-17'),
+(60, 4, 13, ' ', 5, '2024-04-17');
 
 -- --------------------------------------------------------
 
@@ -93,10 +92,19 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id_producto`, `id_categoria`, `nombre_producto`, `detalle`, `precio`, `imagen`) VALUES
-(3, 3, 'Desayuno Especial', 'Cafe, tostadas, queso/ mermelada/dulce de leche/manteca + Jugo de naranjas', 5000, NULL),
-(4, 4, 'Alfajores de maizena', '----', 1900, NULL),
-(10, 3, 'a', 'un prod mas', 2000, NULL),
-(14, 3, 'Cofler Block Mari', 'otro prod nuevo', 12478, 'img/661c7a118ecd1.jpg');
+(3, 3, 'Desayuno Especial', 'Café o té con leche + jugo de naranja + yogur descremado + granola+ mix de frutas', 5680, NULL),
+(4, 4, 'Jugo de naranja', 'Exprimido natural', 2500, NULL),
+(10, 3, 'Clásico', 'Café o té con leche + jugo de naranja + 2 medialunas', 3930, NULL),
+(14, 3, 'Libre de Gluten', 'Café o té con leche + jugo de naranja + mermelada + queso + galletas de arroz', 4480, NULL),
+(18, 1, 'Capuccino Italiano', 'Café, crema, granas de chocolate, canela.', 2200, NULL),
+(19, 1, 'Capuccino Nutella', 'El sabor clásico del capuccino con un toque especial de Nutella', 2400, NULL),
+(20, 1, 'Café Latte', 'Vainilla y canela/ Avellanas', 2400, NULL),
+(21, 2, 'Brownie', 'Porción de brownie de chocolate con nuez', 2200, NULL),
+(22, 2, 'Budín de limón', 'Porción', 1400, NULL),
+(23, 5, 'Budin', 'Opciones marmolado/naranja/limón', 3800, NULL),
+(24, 6, 'Lomito', 'Huevo, panceta, queso,morrón,lechuga y tomate en pan ciabatta', 5800, NULL),
+(25, 7, 'Ñoquis de remolacha', 'Con salsa de hongos secos', 5900, NULL),
+(26, 8, 'Hamburguesa Completa', 'Jamón, queso, lechuga, tomate y huevo', 4500, NULL);
 
 -- --------------------------------------------------------
 
@@ -137,7 +145,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id_usuario`, `email`, `nombre`, `password`, `id_rol`) VALUES
 (4, 'mesteberena@gmail.com', 'Maria', '$2y$10$6bOGSwWbZdj6bEY2ehm06.ODGSBzFS.6shfTofPs0YgLSVfdqN6M.', 1),
-(13, 'pepe@example.com', 'pepe', '$2y$10$ZJDH8zMyMrUZLq6Fi7DFLu6NLoZEI7G7dK3YVstDHJdZYG4XSbqau', 2);
+(13, 'pepe@example.com', 'pepe', '$2y$10$ZJDH8zMyMrUZLq6Fi7DFLu6NLoZEI7G7dK3YVstDHJdZYG4XSbqau', 2),
+(14, 'usuario@example.com', 'usuario', '$2y$10$vg/NiXsPrTWaWIk4bVIFaONV4osEOSCv.9sOq5LblIXgRyD0uJ2TG', 2);
 
 --
 -- Índices para tablas volcadas
@@ -191,13 +200,13 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -209,7 +218,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_usuario` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Restricciones para tablas volcadas

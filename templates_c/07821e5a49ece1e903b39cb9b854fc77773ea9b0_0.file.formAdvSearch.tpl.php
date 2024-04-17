@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-04-15 21:36:57
+/* Smarty version 3.1.39, created on 2024-04-17 19:25:09
   from 'D:\xampp\htdocs\Proyectos\Web II\TPE2024\templates\form\formAdvSearch.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_661d81d9459b54_22231912',
+  'unifunc' => 'content_662005f5af3384_01763819',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_661d81d9459b54_22231912 (Smarty_Internal_Template $_smarty_tpl) {
+function content_662005f5af3384_01763819 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container col-auto">
     <form action="searchProducts" method="get" class="form-group">
         <div class="container m-3 col-sm-auto w-100">

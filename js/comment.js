@@ -85,7 +85,7 @@ async function insertComment(e) { //Agrega un comentario nuevo a través de la A
 
 
 async function deleteComment(comment_id){ //Elimina un comentario dado por ID
-    try {
+    try { console.log(comment_id);
         let response = await fetch(API_URL_2+comment_id, {
             method:"DELETE",
             headers:{
@@ -95,7 +95,7 @@ async function deleteComment(comment_id){ //Elimina un comentario dado por ID
 
         if(response.ok){
             for (const [index, comment] of appComments.comments.entries()) {
-                if (comment.id == comment_id) {
+                if (comment.id_comentario == comment_id) {
                     appComments.comments.splice(index,1);
                 }
             }

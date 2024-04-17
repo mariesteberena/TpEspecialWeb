@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-04-15 23:08:48
+/* Smarty version 3.1.39, created on 2024-04-17 19:54:50
   from 'D:\xampp\htdocs\Proyectos\Web II\TPE2024\templates\vue\commentsVue.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_661d97605413b3_12802034',
+  'unifunc' => 'content_66200cea1e92d8_46341056',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '303e239667c28abf113492e3eefab4a9a906e068' => 
     array (
       0 => 'D:\\xampp\\htdocs\\Proyectos\\Web II\\TPE2024\\templates\\vue\\commentsVue.tpl',
-      1 => 1713215302,
+      1 => 1713376485,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:form/formInsertComment.tpl' => 1,
   ),
 ),false)) {
-function content_661d97605413b3_12802034 (Smarty_Internal_Template $_smarty_tpl) {
+function content_66200cea1e92d8_46341056 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
     <div id="comments">
 
@@ -88,7 +88,7 @@ function content_661d97605413b3_12802034 (Smarty_Internal_Template $_smarty_tpl)
                     <h3 class="h3 m-1">{{notFound}}</h3>
                 </div>
                 <div v-else>
-                    <div class="list-group-item bg-light" v-for="comment in comments" :key="comment.id">
+                    <div class="list-group-item bg-light" v-for="comment in comments" :key="comment.id_comentario">
                         <div class="m-2 p-2">
                             <div
                                 class="row row-no-gutters justify-content-between align-items-center bg-white border border-dark rounded bottom p-2">
@@ -105,7 +105,7 @@ function content_661d97605413b3_12802034 (Smarty_Internal_Template $_smarty_tpl)
                                 
                                     <div class="col-20 justify-content-end">
                                         <button type="button" class="btn btn-sm btn-danger m-2 w-25" name="delete"
-                                            v-on:click="delComment(comment.id)" v-bind:comment-id="comment.id">Borrar</button>
+                                            v-on:click="delComment(comment.id_comentario)" v-bind:comment-id="comment.id_comentario">Borrar</button>
                                     
                                 <?php }?>
                             </div>

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-04-12 17:26:12
+/* Smarty version 3.1.39, created on 2024-04-17 19:25:09
   from 'D:\xampp\htdocs\Proyectos\Web II\TPE2024\templates\section\sectionHome.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_66195294a1c620_56746429',
+  'unifunc' => 'content_662005f5a3bd63_67140757',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_66195294a1c620_56746429 (Smarty_Internal_Template $_smarty_tpl) {
+function content_662005f5a3bd63_67140757 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <div class="d-sm-flex container m-3 ">

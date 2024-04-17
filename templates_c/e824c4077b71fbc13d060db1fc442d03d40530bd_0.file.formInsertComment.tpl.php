@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2024-04-15 23:09:12
+/* Smarty version 3.1.39, created on 2024-04-17 19:37:25
   from 'D:\xampp\htdocs\Proyectos\Web II\TPE2024\templates\form\formInsertComment.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_661d9778f343d2_69805479',
+  'unifunc' => 'content_662008d5718c67_57267188',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e824c4077b71fbc13d060db1fc442d03d40530bd' => 
     array (
       0 => 'D:\\xampp\\htdocs\\Proyectos\\Web II\\TPE2024\\templates\\form\\formInsertComment.tpl',
-      1 => 1713215346,
+      1 => 1713375443,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_661d9778f343d2_69805479 (Smarty_Internal_Template $_smarty_tpl) {
+function content_662008d5718c67_57267188 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container border border-dark rounded list-group-item">
 
     <form action="comentar" method="post" id="post-comment-f">
@@ -62,7 +62,7 @@ function content_661d9778f343d2_69805479 (Smarty_Internal_Template $_smarty_tpl)
         <div class="container">
             <h3>Ingresá como usuario para comentar!</h3>
             <a href="registro" type="button" class="btn btn-primary m-1"> Registrarse</a>
-            <a href="login" type="button" class="btn btn-primary m-1"> Ingresar</a>
+            <a href="login" type="button" class="btn btn-success m-1"> Ingresar</a>
         </div>
 
     <?php }?>

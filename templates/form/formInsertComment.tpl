@@ -39,7 +39,7 @@
         <div class="container">
             <h3>Ingresá como usuario para comentar!</h3>
             <a href="registro" type="button" class="btn btn-primary m-1"> Registrarse</a>
-            <a href="login" type="button" class="btn btn-primary m-1"> Ingresar</a>
+            <a href="login" type="button" class="btn btn-success m-1"> Ingresar</a>
         </div>
 
     {/if}
