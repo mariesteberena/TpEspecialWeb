@@ -106,7 +106,6 @@ class UserAdminController
             && isset($_REQUEST['password-1']) && isset($_REQUEST['password-2'])
             && isset($_REQUEST['usuario']) && isset($_REQUEST['nombre'])
         ) {
-
             if ($_REQUEST['password-1'] != $_REQUEST['password-2']) { //Check que las contraseñas sean iguales
                 $this->renderRegister("Las contraseñas no coinciden");
                 die;

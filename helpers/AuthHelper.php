@@ -44,7 +44,6 @@ class AuthHelper {
 
         switch ($session_role) {
             case $permission_required:
-
                 return;
                 break;
             default:
